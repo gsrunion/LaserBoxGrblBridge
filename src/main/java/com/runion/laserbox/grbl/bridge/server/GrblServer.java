@@ -1,6 +1,8 @@
-package com.runion.laserbox.grbl.bridge;
+package com.runion.laserbox.grbl.bridge.server;
 
-import com.runion.laserbox.grbl.bridge.handlers.CommandHandler;
+import com.runion.laserbox.grbl.bridge.api.GrblCommand;
+import com.runion.laserbox.grbl.bridge.api.GrblCommandProcessor;
+import com.runion.laserbox.grbl.bridge.api.GrblException;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInitializer;
@@ -10,26 +12,26 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
-import io.netty.handler.codec.MessageToMessageEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import java.util.List;
 
 import static java.lang.String.format;
 
 @Component
-public class Server {
+public class GrblServer {
   private EventLoopGroup bossGroup;
   private EventLoopGroup workerGroup;
 
-  private final List<CommandHandler> commandHandlers;
+  private final GrblCommandProcessor commandProcessor;
 
-  public Server(List<CommandHandler> commandHandlers) {
-    this.commandHandlers = commandHandlers;
+  public GrblServer(GrblCommandProcessor commandProcessor) {
+    this.commandProcessor = commandProcessor;
   }
 
   @PostConstruct
@@ -44,34 +46,20 @@ public class Server {
       .childHandler(new ChannelInitializer<SocketChannel>() {
         @Override
         protected void initChannel(SocketChannel channel) {
-          //channel.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
           channel.pipeline().addLast(new LineBasedFrameDecoder(256));
           channel.pipeline().addLast(new StringDecoder());
           channel.pipeline().addLast(new StringEncoder());
-          channel.pipeline().addLast(new MessageToMessageEncoder<String>() {
+          channel.pipeline().addLast(new LineFeedAppender());
+          channel.pipeline().addLast(new CommandTokenizer());
+          channel.pipeline().addLast(new LoggingHandler(LogLevel.INFO));
+          channel.pipeline().addLast(new SimpleChannelInboundHandler<GrblCommand>() {
             @Override
-            protected void encode(ChannelHandlerContext ctx, String in, List<Object> out) {
-             out.add(format("%s\n", in));
-            }
-          });
-
-          channel.pipeline().addLast(new SimpleChannelInboundHandler<String>() {
-            @Override
-            protected void channelRead0(ChannelHandlerContext ctx, String in) {
-              System.out.println(in);
-
-              Parser.parseCommands(in).forEach(command -> {
-                commandHandlers
-                  .stream()
-                  .filter(ch -> ch.handlesCommand(command))
-                  .findFirst()
-                  .ifPresentOrElse(commandHandler -> {
-                    ctx.writeAndFlush(commandHandler.handleCommand(command));
-                  }, () -> {
-                    System.out.printf("Unrecognized Command: %s\n", command);
-                    ctx.writeAndFlush("ok");
-                  });
-              });
+            protected void channelRead0(ChannelHandlerContext ctx, GrblCommand command) {
+              try {
+                ctx.writeAndFlush(commandProcessor.process(command));
+              } catch (GrblException e) {
+                ctx.writeAndFlush(format("error:%s", e.getGrblErrorCode()));
+              }
             }
           });
         }
@@ -84,13 +72,12 @@ public class Server {
   private void stop() {
     System.out.println("Stopping Server");
 
-    if(bossGroup != null) {
+    if (bossGroup != null) {
       bossGroup.shutdownGracefully();
     }
 
-    if(workerGroup != null) {
+    if (workerGroup != null) {
       workerGroup.shutdownGracefully();
     }
   }
-
 }
