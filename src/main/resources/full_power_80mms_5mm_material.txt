@@ -1,31 +1,51 @@
-G0 Z-16.00
-standard
-M34 S0
-M4 S0
-G1 F1000
-M19 S1
-M18 S0
-G0 F10000
+G0 Z-16.00 ; -18.00 for 3mm material # move to focus height [-21, ?]
+standard ; ignored garbage
+M34 S0 
+M4 S0 ;  set power to zero
+G1 F1000; set cutting speed
+M19 S1 ; AIR assist on
+M18 S0 ; Set stepper inactivity timeout to zero ?
+G0 F10000 ; Set rapid speed
 
-(cut start) color=rgb(136,0,255)
-G4 P0.1
-M104 S0
-M4 S1000
+; cut start 
+G4 P0.1 ; pause for a .1 secods
+M104 S0 ; set hot end temperature to 0 ?
+M4 S1000 ; M4 S100 for 10% power
 M34 S0
-G0 F8000
-M32 P15.6
-M33 P15.6
-G1 F4800
-M4 S1000
-G0 X-428.265 Y-290.000
-G1 X-490.000 Y-290.000
-G0 X-490.000 Y-290.000
-M4 S0
-G0
-(cut end)
-M4 S0
-G4 P0.1
-M34 S0
-G0 F10000
-M6 P1
+G0 F8000; Set rapid feed rate
+M32 P15.6 ; M32 P10 for 5mm/s; this is x acceleration math below
+M33 P15.6 ; M32 P10 for 5mm/s; this is y acceleration math below
+G1 F4800 ; set cutting feed rate to 80mm/s
+M4 S1000 ; set laser power 100%
+G0 X-428.265 Y-290.000 ; rapid move to point
+G1 X-490.000 Y-290.000 ; cut move to point
+G0 X-490.000 Y-290.000 ; rapid move to point
+M4 S0 ; turn laser off
+G0 ; move home ?
 
+; cut end 
+M4 S0 ; laser off
+G4 P0.1 ; pause for .1 second
+M34 S0; ?
+G0 F10000; set rapid feed
+M6 P1 ; tool change ? for M1
+
+
+
+
+function generateAcceleration(speed, axis) {
+  // This method is only used when printing bitmaps, and does not distinguish between vector diagrams and bitmaps
+  let Rate = 1; // The bitmap multiple is 2 and the vector plot is 0.5
+  let acceleration = parseInt(Math.sqrt(speed) * Rate);
+  if (axis === 'x') {
+    if (acceleration < 10) {
+      acceleration = 10;
+    }
+    if (acceleration > 1000) {
+      acceleration = 1000;
+    }
+    return acceleration;
+  } else {
+    return 10; // 固定y轴加速度
+  }
+}
