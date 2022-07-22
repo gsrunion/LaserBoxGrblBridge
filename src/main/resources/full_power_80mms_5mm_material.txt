@@ -1,5 +1,5 @@
 G0 Z-16.00 ; -18.00 for 3mm material # move to focus height [-21, ?]
-standard ; ignored garbage
+
 M34 S0 
 M4 S0 ;  set power to zero
 G1 F1000; set cutting speed
