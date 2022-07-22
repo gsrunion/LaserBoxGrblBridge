@@ -1,0 +1,1367 @@
+{
+	"info": {
+		"_postman_id": "3a77610b-027a-4974-8a90-a4ebe858114d",
+		"name": "Laserbox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "gcode playback",
+			"item": [
+				{
+					"name": "G0 Z-16.00",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0 Z-16.00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0 Z-16.00"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M34 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M34 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M34 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M4 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M4 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M4 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G1 F1000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G1 F1000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G1 F1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AIR ASSIST ON",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M19 S1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M19 S1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M18 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M18 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M18 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G0 F10000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0 F10000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0 F10000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G4 P0.1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G4 P0.1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G4 P0.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M104 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M104 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M104 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M4 S1000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M4 S1000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M4 S1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M34 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M34 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M34 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G0 F8000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0 F8000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0 F8000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M32 P15.6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M32 P15.6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M32 P15.6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M33 P15.6",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M33 P15.6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M33 P15.6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G1 F4800",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M33 P15.6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M33 P15.6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M4 S1000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M4 S1000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M4 S1000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G0 X-29.174 Y-25.602",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0 X-29.174 Y-25.602",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0 X-29.174 Y-25.602"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G1 X-29.684 Y-59.786",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G1 X-29.684 Y-59.786",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G1 X-29.684 Y-59.786"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G0 X-29.684 Y-59.786",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0 X-29.684 Y-59.786\n",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0 X-29.684 Y-59.786\n"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M4 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M4 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M4 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M4 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M4 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M4 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G4 P0.1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G4 P0.1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G4 P0.1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M4 S0",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M4 S0",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M4 S0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G0 F10000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=G0 F10000",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "G0 F10000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "M6 P1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/cnc/cmd?cmd=M6 P1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cnc",
+								"cmd"
+							],
+							"query": [
+								{
+									"key": "cmd",
+									"value": "M6 P1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get machine type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getmachinetype",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getmachinetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blade offset x",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getconfig?key=bladeoffsetx",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getconfig"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "bladeoffsetx"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get blade offset y",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getconfig?key=bladeoffsety",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getconfig"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "bladeoffsety"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get purifier status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getpurifiercheck",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getpurifiercheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get drawer status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getdrawercheck",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getdrawercheck"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get laser power",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getlaserpower",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getlaserpower"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get purifier continue",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getpurifiercontinue",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getpurifiercontinue"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get offline mode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getofflinemode",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getofflinemode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get connection number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=get_conn_num",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "get_conn_num"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get task number",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=get_task_number",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "get_task_number"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get laser work time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/peripherystatus?action=systemworktime",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"peripherystatus"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "systemworktime"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get system work time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/peripherystatus?action=systemworktime",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"peripherystatus"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "systemworktime"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=version_v2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "version_v2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get mode",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getmode",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getmode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get mac address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=mac",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "mac"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cnc status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/cnc/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cnc",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get device name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=get_dev_name",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "get_dev_name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get machine type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=get_dev_name",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "get_dev_name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get ssid",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/net?action=getssid",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"net"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "getssid"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get network configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/net?action=ifconfig",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"net"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "ifconfig"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download points",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/file?action=download&filename=points.json",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"file"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "download"
+						},
+						{
+							"key": "filename",
+							"value": "points.json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "access point list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/net?action=aplist",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"net"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "aplist"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "camera",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/system?action=camera",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"system"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "camera"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "snap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/snap?stream=0&random=778.7805697237386",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"",
+						"snap"
+					],
+					"query": [
+						{
+							"key": "stream",
+							"value": "0"
+						},
+						{
+							"key": "random",
+							"value": "778.7805697237386"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get laser power type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/getlaserpowertype",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"getlaserpowertype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set print tool type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/setprintToolType?type=Laser",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"",
+						"setprintToolType"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Laser"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "laser head Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/peripherystatus?action=laserhead",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"peripherystatus"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "laserhead"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get cut progress",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/cnc/data?query=progress",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cnc",
+						"data"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "progress"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload gcode",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/Users/geraldrunion/Desktop/vertical line full power 80mms.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/cnc/data?action=upload&zip=false&id=-2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cnc",
+						"data"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "upload"
+						},
+						{
+							"key": "zip",
+							"value": "false"
+						},
+						{
+							"key": "id",
+							"value": "-2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "abort cut",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/cnc/data?action=stop",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cnc",
+						"data"
+					],
+					"query": [
+						{
+							"key": "action",
+							"value": "stop"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send command",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/cnc/cmd?cmd=G0",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cnc",
+						"cmd"
+					],
+					"query": [
+						{
+							"key": "cmd",
+							"value": "G0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.collectionVariables.set(\"base_url\", \"201.234.3.1:8080\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		}
+	]
+}
