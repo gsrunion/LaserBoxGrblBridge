@@ -11,7 +11,7 @@ MakeBlocks C02 lasers come with a proprietary software called LaserBox for CAD (
 
 Once it was discovered that the USB connection was a USB -> Ethernet adapter a little network traffic sniffing with Wireshark showed that interaction between the LaserBox software was primarily HTTP calls and a WebSocket connection whos purpose is yet to be understood. The WireShark capture can be found [here](https://github.com/gsrunion/LaserBoxGrblBridge/blob/main/src/main/resources/laserbox%20capture.pcapng)
 
-Traffic between the software and the machine was monitored over the course of several cuts and these calls were added to a PostMan collection ((https://github.com/gsrunion/LaserBoxGrblBridge/blob/main/src/main/resources/Laserbox.postman_collection.json)) to test that each command could be replayed. Some replay, some dont.
+Traffic between the software and the machine was monitored over the course of several cuts and these calls were added to a [PostMan collection] ((https://github.com/gsrunion/LaserBoxGrblBridge/blob/main/src/main/resources/Laserbox.postman_collection.json)) to test that each command could be replayed. Some replay, some dont.
 
 Looking at the installed artifacts for the LaserBox software it was apparent that the software was an Electron app. Electron applications are applications built using web technologies that are packaged up in a manner that they appear as native applications. That means it is built of JavaScript, HTML, CSS, and some WebAssembly. With the exception of the WebAssembly, all this resources are in stored in a plain text, human readable form and can be unpacked from the application and the source code reasoned about.
 
@@ -26,7 +26,7 @@ which is where the LaserBox software uploads a zip compressed gcode file to the 
 which allows a single gcode command at a time to be sent to the machine.
 
 
-Using (1) I collected 4 copies of the same design sent to the machine with different parameters to material thickens, power, and speed. These for gcode files are captures as text files here and will serve as a basis for reverse engineering the non-standard gcode the machine uses. (https://github.com/gsrunion/LaserBoxGrblBridge/tree/main/src/main/resources)
+Using (1) I collected 4 copies of the same design sent to the machine with different parameters to material thickens, power, and speed. These for gcode files are captures as text files [here]((https://github.com/gsrunion/LaserBoxGrblBridge/tree/main/src/main/resources)) and will serve as a basis for reverse engineering the non-standard gcode the machine uses. 
 
 
 
