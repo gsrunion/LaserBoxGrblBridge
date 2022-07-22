@@ -15,16 +15,16 @@ public class LaserboxGrblProcessor implements GrblCommandProcessor {
     switch(command.command()) {
       case "G0", "G00" -> handleRapid(command);
       case "G1" -> handleLinearCut(command);
-      M34 S0
-      M19 S1
-      M18 S0
-      M104 S0
-      M34 S0
-      M32 P10
-      M33 P10
-      G4 P0.1
-      M34 S0
-      M6 P1
+//      M34 S0
+//      M19 S1
+//      M18 S0
+//      M104 S0
+//      M34 S0
+//      M32 P10
+//      M33 P10
+//      G4 P0.1
+//      M34 S0
+//      M6 P1
     }
   }
 
