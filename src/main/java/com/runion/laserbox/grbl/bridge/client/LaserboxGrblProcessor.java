@@ -26,6 +26,7 @@ public class LaserboxGrblProcessor implements GrblCommandProcessor {
 //      M34 S0
 //      M6 P1
     }
+    return "ok";
   }
 
   private void handleLaserPower(GrblCommand command) {

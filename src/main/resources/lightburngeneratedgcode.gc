@@ -1,0 +1,30 @@
+; LightBurn 1.2.00
+; GRBL device profile, absolute coords
+; Bounds: X63 Y60 to X126 Y82
+G00
+G17
+G40
+G21
+G54
+G90
+M4
+
+; Cut @ 80 mm/sec, 20% power
+M8
+G0 X63Y82
+; Layer C00
+G1 X124S200F4800
+; Cut @ 100 mm/sec, 20% power
+M8
+G0 X126Y60
+; Layer C01
+G1 X64Y61F6000
+M9
+G1 S0
+M5
+G90
+; return to user-defined finish pos
+G0 X0 Y0
+M2
+
+
