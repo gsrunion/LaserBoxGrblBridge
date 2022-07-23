@@ -24,7 +24,6 @@ public class GrblChannelInitializer extends ChannelInitializer<Channel> {
     channel.pipeline().addLast(new StringDecoder()); // convert inbound ByteBuf to Strings
     channel.pipeline().addLast(new StringEncoder()); // convert outbound Strings to ByteBuf
     channel.pipeline().addLast(new LineFeedAppender()); // adds newline to end of output strings
-    channel.pipeline().addLast(new CommandTokenizer()); // parses inbound into GrblCommand
     channel.pipeline().addLast(handler);
   }
 }
