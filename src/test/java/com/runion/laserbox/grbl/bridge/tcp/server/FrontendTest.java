@@ -1,7 +1,7 @@
 package com.runion.laserbox.grbl.bridge.tcp.server;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.runion.laserbox.grbl.bridge.api.LaserBoxGCodeClient;
+import com.runion.laserbox.grbl.bridge.api.GrblProxy;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
@@ -27,7 +27,7 @@ class FrontendTest {
   private ByteBuf buffer = Unpooled.wrappedBuffer(bytes);
 
   @Mock
-  private LaserBoxGCodeClient client;
+  private GrblProxy client;
 
   @Captor
   private ArgumentCaptor<List<String>> inputCaptor;

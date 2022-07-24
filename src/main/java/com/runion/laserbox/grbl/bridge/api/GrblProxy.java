@@ -4,6 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.util.List;
 
-public interface LaserBoxGCodeClient {
+public interface GrblProxy {
   String sendRequest(List<String> gcodes) throws JsonProcessingException;
 }

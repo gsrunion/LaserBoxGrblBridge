@@ -4,12 +4,15 @@ import org.springframework.web.util.UriBuilder;
 
 import java.net.URI;
 
-class LaserBoxUrlBuilder {
-  private static final String PATH = "/cnc/cmd";
-
+/**
+ * Builds url for forwarding gcode to the laserbox
+ *
+ * Example G0 X1 Y1 Z1 -> /cnc/cmd?cmd=G0%20X1%20Y1%20Z1
+ */
+class LaserBoxGCodeUrlBuilder {
   public static URI buildUri(UriBuilder builder, String gcode) {
     return builder
-      .path(PATH)
+      .path("/cnc/cmd")
       .queryParam("cmd", gcode)
       .build();
   }

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+// Splits incoming gcode line into a list of individual gcode commands
 class GcodeCommandTokenizer extends MessageToMessageDecoder<String> {
   @Override
   protected void decode(ChannelHandlerContext ctx, String in, List<Object> out) {

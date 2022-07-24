@@ -6,6 +6,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
+// expected to be used for end to end tests later.
 public class SimpleTcpClient {
   private final SimpleTcpClientConfiguration configuration;
   private EventLoopGroup group;

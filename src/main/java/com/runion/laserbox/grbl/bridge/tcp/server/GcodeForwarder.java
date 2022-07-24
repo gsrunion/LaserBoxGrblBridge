@@ -1,16 +1,20 @@
 package com.runion.laserbox.grbl.bridge.tcp.server;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.runion.laserbox.grbl.bridge.api.LaserBoxGCodeClient;
+import com.runion.laserbox.grbl.bridge.api.GrblProxy;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
 import java.util.List;
 
+/**
+ * Takes the parsed list of gcode commands and hands them off to whichever
+ * LaserBoxGCodeClient is instantiated
+ */
 class GcodeForwarder extends SimpleChannelInboundHandler<List<String>> {
-  private final LaserBoxGCodeClient client;
+  private final GrblProxy client;
 
-  GcodeForwarder(LaserBoxGCodeClient client) {
+  GcodeForwarder(GrblProxy client) {
     this.client = client;
   }
 
