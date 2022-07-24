@@ -13,8 +13,16 @@ class GcodeCommandTokenizer extends MessageToMessageDecoder<String> {
   protected void decode(ChannelHandlerContext ctx, String in, List<Object> out) {
     List<String> commands = new ArrayList<>();
     for(String token: in.split("((?=[GM$]))")) {
-      commands.add(token.replace("  ", " ").trim());
+      commands.add(sanitize(token));
     }
     out.add(commands);
+  }
+
+  private String sanitize(String gcode) {
+    gcode = gcode.replaceAll("  ", " ");
+    gcode = gcode.replaceAll("X ", "X");
+    gcode = gcode.replaceAll("Y ", "Y");
+    gcode = gcode.replaceAll("Z ", "Z");
+    return gcode.trim();
   }
 }
