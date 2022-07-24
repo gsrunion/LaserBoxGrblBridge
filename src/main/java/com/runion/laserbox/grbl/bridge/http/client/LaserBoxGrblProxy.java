@@ -53,7 +53,7 @@ public class LaserBoxGrblProxy implements GrblProxy {
       return "ok";
     }
 
-    AtomicReference<String> gcodeRef = new AtomicReference<>(GCodeCoordinateInverter.invert(GCodeSpaceInserter.insert(gcode)));
+    AtomicReference<String> gcodeRef = new AtomicReference<>(GCodeCoordinateInverter.invert(gcode));
 
     System.out.printf("HTTP Response %s\n", gcodeRef.get());
     String response = webClient.get()
