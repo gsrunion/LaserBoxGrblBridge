@@ -20,18 +20,16 @@ import java.util.concurrent.atomic.AtomicReference;
 @Component
 public class LaserBoxGrblProxy implements GrblProxy {
   private final ObjectMapper objectMapper;
-  private final WebClient webClient;
-  private final String url;
+  private String url;
 
   public LaserBoxGrblProxy(ObjectMapper objectMapper) {
     this.objectMapper = objectMapper;
     this.url = "http://201.234.3.1:8080";
+  }
 
-    webClient = WebClient
-      .builder()
-      .baseUrl(url)
-      .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_VALUE)
-      .build();
+  public LaserBoxGrblProxy setUrl(String url) {
+    this.url = url;
+    return this;
   }
 
   private static record LaserBoxResponse(String result) {
@@ -52,6 +50,12 @@ public class LaserBoxGrblProxy implements GrblProxy {
     if (gcode.startsWith("$")) {
       return "ok";
     }
+
+    WebClient webClient;webClient = WebClient
+      .builder()
+      .baseUrl(url)
+      .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_VALUE)
+      .build();
 
     AtomicReference<String> gcodeRef = new AtomicReference<>(GCodeCoordinateInverter.invert(gcode));
 
