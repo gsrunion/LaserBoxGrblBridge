@@ -25,7 +25,7 @@ public class LaserBoxGrblProxy implements GrblProxy {
 
   public LaserBoxGrblProxy(ObjectMapper objectMapper) {
     this.objectMapper = objectMapper;
-    this.url = "201.234.3.1:8080";
+    this.url = "http://201.234.3.1:8080";
 
     webClient = WebClient
       .builder()
@@ -49,14 +49,13 @@ public class LaserBoxGrblProxy implements GrblProxy {
   }
 
   private String sendRequest(String gcode) throws JsonProcessingException {
-    System.out.printf("START %s ->", gcode);
     if (gcode.startsWith("$")) {
-      System.out.printf(" ok END\n");
       return "ok";
     }
 
     AtomicReference<String> gcodeRef = new AtomicReference<>(GCodeCoordinateInverter.invert(GCodeSpaceInserter.insert(gcode)));
 
+    System.out.printf("HTTP Response %s\n", gcodeRef.get());
     String response = webClient.get()
       .uri(builder -> LaserBoxGCodeUrlBuilder.buildUri(builder, gcodeRef.get()))
       .retrieve()
@@ -64,8 +63,7 @@ public class LaserBoxGrblProxy implements GrblProxy {
       .block();
 
     String result = objectMapper.readValue(response, LaserBoxResponse.class).result();
-
-    System.out.printf(" %s END\n", result);
+    System.out.printf("HTTP Response %s\n", gcodeRef.get());
 
     return result;
   }
