@@ -17,19 +17,15 @@ public class LaserBoxHttpClientImpl implements LaserBoxGCodeClient {
   private final WebClient webClient;
   private final String url;
 
-  public LaserBoxHttpClientImpl(ObjectMapper objectMapper, String url) {
+  public LaserBoxHttpClientImpl(ObjectMapper objectMapper) {
     this.objectMapper = objectMapper;
-    this.url = url;
+    this.url = "201.234.3.1:8080";
 
     webClient = WebClient
       .builder()
       .baseUrl(url)
       .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.TEXT_PLAIN_VALUE)
       .build();
-  }
-
-  public LaserBoxHttpClientImpl(ObjectMapper objectMapper) {
-    this(objectMapper, "201.234.3.1:8080");
   }
 
   private static record LaserBoxResponse(String result) {
