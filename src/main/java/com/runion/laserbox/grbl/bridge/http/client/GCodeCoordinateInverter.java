@@ -21,7 +21,6 @@ class GCodeCoordinateInverter {
     gcode = gcode.replaceAll("--", "");
     gcode = gcode.replaceAll("-0", "0");
 
-    System.out.printf(" COORDS %s ->", gcode);
     return gcode;
   }
 }

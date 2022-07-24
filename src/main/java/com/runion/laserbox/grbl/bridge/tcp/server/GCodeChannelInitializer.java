@@ -26,12 +26,12 @@ public class GCodeChannelInitializer extends SimpleTcpServerConfiguration {
   @Override
   protected void initChannel(Channel channel) {
     channel.pipeline().addLast(
-      new LoggingHandler(LogLevel.ERROR), // Logging all traffic
       new LineBasedFrameDecoder(256), // Splits input on newlines
       new StringDecoder(), // ByteBuf to String
       new StringEncoder(), // String to ByteBuf
-      new GcodeCommandTokenizer(), // Split at G, M, and newline
       new LineFeedAppender(), // Append newline
+      new StringLoggingHandler(), // Logging
+      new GcodeCommandTokenizer(), // Split at G, M, and newline
       new GcodeForwarder(laserBoxHttpClient) // Forward on to LaserBox
     );
   }

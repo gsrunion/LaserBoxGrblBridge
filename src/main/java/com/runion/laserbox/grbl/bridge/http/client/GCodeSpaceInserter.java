@@ -16,7 +16,6 @@ class GCodeSpaceInserter {
     gcode = gcode.replaceAll("  ", " ");
     gcode = gcode.replaceAll("  ", " ");
 
-    System.out.printf(" SPACES %s ->", gcode);
     return gcode;
   }
 }
