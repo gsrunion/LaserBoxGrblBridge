@@ -1,42 +1,33 @@
-package com.runion.laserbox.grbl.bridge.server;
+package com.runion.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
-@Component
-public class GrblServer {
+public class SimpleTcpServer {
   private EventLoopGroup bossGroup;
   private EventLoopGroup workerGroup;
 
-  private final GrblChannelInitializer channelInitializer;
+  private final SimpleTcpServerConfiguration configuration;
 
-  public GrblServer(GrblChannelInitializer channelInitializer) {
-    this.channelInitializer = channelInitializer;
+  public SimpleTcpServer(SimpleTcpServerConfiguration configuration) {
+    this.configuration = configuration;
   }
 
-  @PostConstruct
-  void start() {
-    System.out.println("Starting Server");
+  public void start() {
     bossGroup = new NioEventLoopGroup(1);
     workerGroup = new NioEventLoopGroup();
 
     ServerBootstrap b = new ServerBootstrap();
     b.group(bossGroup, workerGroup)
       .channel(NioServerSocketChannel.class)
-      .childHandler(channelInitializer);
-    b.bind(NetworkConstants.INBOUND_PORT);
+      .childHandler(configuration);
+
+    b.bind(configuration.port());
   }
 
-  @PreDestroy
-  void stop() {
-    System.out.println("Stopping Server");
-
+  public void stop() {
     if (bossGroup != null) {
       bossGroup.shutdownGracefully();
     }
@@ -45,5 +36,4 @@ public class GrblServer {
       workerGroup.shutdownGracefully();
     }
   }
-
 }
